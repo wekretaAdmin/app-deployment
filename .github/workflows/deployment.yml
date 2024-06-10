@@ -15,6 +15,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  
+jobs:
   generate-keys:
     name: Generate Keystore and Keys
     runs-on: ubuntu-latest
@@ -29,22 +31,26 @@ jobs:
         # Example: keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
         
         # Store generated keys as GitHub secrets
-        echo "::set-env name=KEYSTORE_CONTENTS::$(cat my-release-key.keystore | base64 -w 0)"
-        echo "::set-env name=KEYSTORE_PASSWORD::your_keystore_password"
-        echo "::set-env name=KEY_ALIAS::your_key_alias"
-        echo "::set-env name=KEY_PASSWORD::your_key_password"
+        echo "::add-mask::$KEYSTORE_CONTENTS"  # Masking the keystore contents in logs
+        echo "::add-mask::$KEYSTORE_PASSWORD"  # Masking the keystore password in logs
+        echo "::add-mask::$KEY_ALIAS"  # Masking the key alias in logs
+        echo "::add-mask::$KEY_PASSWORD"  # Masking the key password in logs
+        echo "KEYSTORE_CONTENTS=$KEYSTORE_CONTENTS" >> $GITHUB_ENV
+        echo "KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD" >> $GITHUB_ENV
+        echo "KEY_ALIAS=$KEY_ALIAS" >> $GITHUB_ENV
+        echo "KEY_PASSWORD=$KEY_PASSWORD" >> $GITHUB_ENV
 
       env:
         KEYSTORE_CONTENTS: ${{ secrets.KEYSTORE_CONTENTS }}
         KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        
+
     - name: Store Generated Keys as Secrets
-      uses: actions/set-secret@v1
-      with:
-        secret: KEYSTORE_CONTENTS
-        value: ${{ env.KEYSTORE_CONTENTS }}
+      run: |
+        echo "$KEYSTORE_CONTENTS" | base64 -d > keystore.jks
+        echo "::set-secret name=KEYSTORE_CONTENTS::$(base64 keystore.jks | tr -d '\n')"
+        echo "::remove-secret name=KEYSTORE_CONTENTS"
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
