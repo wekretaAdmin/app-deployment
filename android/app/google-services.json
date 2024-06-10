@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "382818658961",
+    "firebase_url": "https://krenai-webapp.firebaseio.com",
+    "project_id": "krenai-webapp",
+    "storage_bucket": "krenai-webapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382818658961:android:46693e678cfdf064cf6d30",
+        "android_client_info": {
+          "package_name": "com.fashionproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382818658961-c79ls9ocm6po96tjltbul71cc0euv37h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fashionproject",
+            "certificate_hash": "767a4802cd6a57117d04e6e1beaccf01dc39081c"
+          }
+        },
+        {
+          "client_id": "382818658961-t7ob797btndlfajqqob5r4gv3imnj8nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQS7x8oD0zjH3n0iHKnkfK9eQIhkSN6XA"
+        },
+        {
+          "current_key": "AIzaSyDg-Bno5oFpaue-EcqU04xS8LK9LGfET5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382818658961-t7ob797btndlfajqqob5r4gv3imnj8nh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "382818658961-0fnd173v25pml2s83lh5dbk9v188cdck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wekretasellerapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382818658961:android:7c235a2e712d76aecf6d30",
+        "android_client_info": {
+          "package_name": "com.fashionproject.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382818658961-fn07sm4feb96ooriqrj88fch056u6gqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fashionproject.debug",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "382818658961-t7ob797btndlfajqqob5r4gv3imnj8nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQS7x8oD0zjH3n0iHKnkfK9eQIhkSN6XA"
+        },
+        {
+          "current_key": "AIzaSyDg-Bno5oFpaue-EcqU04xS8LK9LGfET5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382818658961-t7ob797btndlfajqqob5r4gv3imnj8nh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "382818658961-0fnd173v25pml2s83lh5dbk9v188cdck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wekretasellerapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
