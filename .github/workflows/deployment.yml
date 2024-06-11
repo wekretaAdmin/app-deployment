@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
+
   
 jobs:
   generate-keys:
@@ -27,6 +27,7 @@ jobs:
 
     - name: Generate Keys
       run: |
+        keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
         # Replace this with the command or script to generate your keys
         # Example: keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
         
