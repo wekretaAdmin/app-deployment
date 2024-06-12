@@ -60,19 +60,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Download and extract Android SDK
-      run: |
-          wget -q "https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip" -O android-sdk.zip
-          unzip -qq -d $HOME/android-sdk android-sdk.zip
-
-    - name: Set up environment variables
-      run: |
-          export ANDROID_HOME=$HOME/android-sdk
-          export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH
-
-    - name: Install Build Tools using Gradle
-      run: ./gradlew app:assembleRelease -Pandroid.builder.sdkDownload=true
-          
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
