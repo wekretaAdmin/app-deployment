@@ -70,9 +70,6 @@ jobs:
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH
 
-    - name: Accept Android SDK licenses
-      run: yes | sdkmanager --licenses
-
     - name: Install Build Tools using Gradle
       run: ./gradlew app:assembleRelease -Pandroid.builder.sdkDownload=true
           
