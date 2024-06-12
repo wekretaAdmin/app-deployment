@@ -73,7 +73,10 @@ jobs:
           
     - name: Install Dependencies
       run: npm install --legacy-peer-deps
-        
+
+    - name: Install Build Tools
+      run: echo y | sdkmanager "build-tools;29.0.3"
+      
     - name: Build Android Release
       run: |
         cd android
