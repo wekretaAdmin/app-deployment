@@ -55,7 +55,8 @@ jobs:
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-
+    container:
+      image: bazel/android-ndk:latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -73,15 +74,6 @@ jobs:
           
     - name: Install Dependencies
       run: npm install --legacy-peer-deps
-
-    - name: Download and Extract Android SDK
-      run: |
-          wget -q "https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip" -O android-sdk.zip
-          unzip -qq -d $HOME/android-sdk android-sdk.zip
-          mv $HOME/android-sdk/cmdline-tools $HOME/android-sdk/tools
-
-    - name: Install Build Tools
-      run: $HOME/android-sdk/tools/bin/sdkmanager "build-tools;29.0.3"
       
     - name: Build Android Release
       run: |
