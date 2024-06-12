@@ -55,8 +55,7 @@ jobs:
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    container:
-      image: bazel/android-ndk:latest
+   
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
