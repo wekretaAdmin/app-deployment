@@ -80,12 +80,12 @@ jobs:
         ./gradlew assembleRelease
         
     - name: Echo Directory Structure
-      run: ls app
+      run: ls android
       
     - name: Sign APK
       uses: r0adkll/sign-android-release@v1
       with:
-       releaseDirectory: app/release/
+       releaseDirectory: android/app/release/
        alias: ${{ secrets.KEY_ALIAS }}
        signingKeyBase64: ${{ secrets.KEYSTORE_CONTENTS }}
        keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
