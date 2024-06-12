@@ -80,9 +80,6 @@ jobs:
           unzip -qq -d $HOME/android-sdk android-sdk.zip
           mv $HOME/android-sdk/cmdline-tools $HOME/android-sdk/tools
 
-    - name: Accept Android SDK Licenses
-      run: yes | $HOME/android-sdk/tools/bin/sdkmanager --licenses
-
     - name: Install Build Tools
       run: $HOME/android-sdk/tools/bin/sdkmanager "build-tools;29.0.3"
       
