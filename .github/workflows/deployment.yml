@@ -66,13 +66,6 @@ jobs:
           wget -q "https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip" -O android-sdk.zip
           unzip -qq android-sdk.zip -d $HOME/android-sdk
 
-      # Set SDK root and accept Android SDK licenses
-    - name: Set SDK root and accept licenses
-      run: |
-           - export ANDROID_HOME=$PWD/android-sdk-linux
-           - yes | android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses
-           - android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
-
       # Install build tools
     - name: Install Build Tools
       run: sdkmanager "build-tools;29.0.3"
